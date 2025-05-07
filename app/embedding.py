@@ -4,7 +4,7 @@ from transformers import AutoTokenizer, AutoModel
 import numpy as np
 
 class InLegalBERTEmbedder:
-    def __init__(self, model_name='nlpaueb/legal-bert-base-uncased', device=None):
+    def __init__(self, model_name='law-ai/InLegalBERT', device=None):
         self.tokenizer = AutoTokenizer.from_pretrained(model_name)
         self.model = AutoModel.from_pretrained(model_name)
         self.device = device or ('cuda' if torch.cuda.is_available() else 'cpu')
